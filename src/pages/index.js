@@ -9,7 +9,12 @@ import nosCastLogo from "../images/CampNosLogo.png"
 import gregLogo from "../images/GregsAwesomeLogo.png"
 import primeLogo from "../images/primeStories.jpg"
 
-const IndexPage = () => {
+const IndexPage = (props) => {
+	const allFiles = props.data.allFile.edges.map(edge => edge.node)
+	const shows = allFiles.filter(node => node.sourceInstanceName === 'shows')
+	.map(show => show.childMarkdownRemark)
+	const episodes = allFiles.filter(node => node.sourceInstanceName === 'episodes')
+	.map(episodes => episodes.childMarkdownRemark)
 	const contentSections = [
 		{
 			name: "The NosCast",
@@ -59,11 +64,16 @@ const IndexPage = () => {
 				>
 					<h1
 						style={{ color: 'rgb(168,143,178)' }}>Shows</h1>
-					{contentSections.map(section => {
+					{shows.map(show => {
+						const frontmatter = show.frontmatter;
+						const link = show.fields.slug;
+						const associatedEpisodes = episodes.filter(episode => episode.frontmatter.show === frontmatter.title)
 						return <ContentSection
-							key={section.name}
-							name={section.name}
-							logo={section.logo}
+							key={frontmatter.title}
+							name={frontmatter.title}
+							logo={frontmatter.logo}
+							link={link}
+							episodes = {associatedEpisodes}
 						/>
 					})}
 
@@ -81,3 +91,35 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+export const pageQuery = graphql
+    `
+    query
+    {
+        allFile(filter: {sourceInstanceName: {in: ["shows","episodes"]}}) {
+            edges {
+              node {
+                id
+                sourceInstanceName
+                childMarkdownRemark {
+				html
+				fields{
+					slug
+				}
+                frontmatter {
+                    show
+                    description
+					title
+					logo {
+						childImageSharp {
+							fluid(maxWidth: 800) {
+								...GatsbyImageSharpFluid
+							  }
+						}
+					}
+                  }
+                }
+              }
+            }
+          }
+      }
+    `

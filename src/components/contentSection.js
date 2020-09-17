@@ -1,41 +1,44 @@
 import React from "react"
+import Img from "gatsby-image"
 
 const contentSection = (props) => {
+    const logo = props.logo.childImageSharp.fluid;
+    const link = props.link;
     return (
         <div className="content-section">
-            <div className="logo-container">
-            <img src={props.logo}/>
-            <p>{props.name}</p>
-            </div>
-    {[1,2,3].map(row => {
-        return (
-        <div
-        key={row} 
-        className='content-box-wrapper'
-        style={{
-            margin:'2rem',
-        }}
-        > 
-        
-        <div 
-        className='content-box'
-        style={{
-            width:'100%',
-            color:'white',
-            height:'13rem',
-        }}
-        >
-            <img 
-            style={{
-                height:'12rem',
-                width:'20rem',
-        }}
-            src={"https://source.unsplash.com/random?sig="+ Math.floor((Math.random() * 100) + 1)}/>
-        <p> Episode {row}</p>
+            <a href={link}>
+                <div className="logo-container">
+                    <Img fluid={logo} />
+                    <p>{props.name}</p>
+                </div>
+            </a>
+            {props.episodes.map(episode => {
+                return (
+                    <div
+                        key={episode.title}
+                        className='content-box-wrapper'
+                        style={{
+                            margin: '2rem',
+                        }}
+                    >
+
+                        <div
+                            className='content-box'
+                            style={{
+                                width: '100%',
+                                color: 'white',
+                                height: '13rem',
+                            }}
+                        >
+                            <div
+                                dangerouslySetInnerHTML={{ __html: episode.html }}
+                            />
+                            <p>{episode.title}</p>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
-        </div>
-    )})}
-    </div>
     )
 }
 
