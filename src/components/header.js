@@ -1,11 +1,13 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import logo from "../assets/images/logo.png";
 
 const Header = ({ siteTitle }) => (
   <header
+  id="site-header"
     style={{
-      background: `rebeccapurple`,
+      background: `rgb(102,216,169)`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -24,6 +26,7 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
+          <img id="header-logo" src={logo}/>
           {siteTitle}
         </Link>
       </h1>
@@ -36,7 +39,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `CAMP NOS COLLECTIVE`,
 }
 
 export default Header
