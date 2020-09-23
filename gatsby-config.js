@@ -22,6 +22,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/assets`,
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         // CommonMark mode (default: true)
@@ -34,6 +40,11 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+            },
+          },
           {
             resolve: `gatsby-remark-embedder`,
             options: {
@@ -73,12 +84,6 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/static/assets`,
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
