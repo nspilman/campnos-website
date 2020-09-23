@@ -66,14 +66,16 @@ exports.createPages = async ({ graphql, actions }) => {
     // Create blog post pages.
     posts.forEach(post => {
         const { sourceInstanceName } = post.node;
-        const { title } = post.node.childMarkdownRemark.frontmatter;
+        const { title, description, logo } = post.node.childMarkdownRemark.frontmatter;
             console.log(post.node)
       createPage({
         // Path for this page — required
         path: post.node.childMarkdownRemark.fields.slug,
         component: content,
         context: {
-            title
+            title,
+            description,
+            logo
           // Add optional context data to be inserted
           // as props into the page component..
           //

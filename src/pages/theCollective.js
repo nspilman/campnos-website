@@ -4,14 +4,16 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import Bio from "../components/bio"
+
 const theCollective = (props) => {
-  console.log(props.data)
+  const bios = props.data.allFile.edges.map(edge => edge.node.childMarkdownRemark)
   return (
     <Layout>
     <SEO title="The Collective" />
     <h1>The CampNos Collective</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    {bios.map(persion => {
+    return <Bio bio={persion}/>})}
   </Layout>
   )
 }
@@ -32,10 +34,17 @@ export const pageQuery = graphql
                     title
                     twitter
                     instagram
+                    image {
+                        childImageSharp {
+                          fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
                   }
                 }
               }
             }
           }
-      }
+        }
     `
