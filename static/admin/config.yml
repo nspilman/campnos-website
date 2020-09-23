@@ -12,27 +12,30 @@ collections:
     folder: content/bios
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
+      - { name: name, label: Name }
+      - { name: twitter, label: Twitter }
+      - { name: instagram, label: Instagram }
+      - { name: image, label: Image, widget: image }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
   
   - name: shows
-    label: categories
+    label: shows
     folder: content/shows
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: logo, label: Logo, widget: image }
       - { name: body, label: Body, widget: markdown }
 
   - name: episodes
-    label: shows
+    label: episodes
     folder: content/episodes
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: show, label: Show }
+      - { name: date, label: Date, widget: datepicker }
+      - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
