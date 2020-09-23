@@ -7,9 +7,9 @@ media_folder: static/assets
 public_folder: /assets
 
 collections:
-  - name: bio
+  - name: bios
     label: bios
-    folder: bios
+    folder: content/bios
     create: true
     fields:
       - { name: path, label: Path }
@@ -17,9 +17,9 @@ collections:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
   
-  - name: categories
+  - name: shows
     label: categories
-    folder: categories
+    folder: content/shows
     create: true
     fields:
       - { name: path, label: Path }
@@ -27,9 +27,9 @@ collections:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
 
-  - name: shows
+  - name: episodes
     label: shows
-    folder: shows
+    folder: content/episodes
     create: true
     fields:
       - { name: path, label: Path }
