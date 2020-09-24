@@ -35,7 +35,7 @@ collections:
     create: true
     fields:
       - { name: title, label: Title }
-      - { name: show, label: Show, widget: select, option: ["The NosCast","Greg's Awesome Party", "Prime Stories"] }
+      - { name: show, label: Show, widget: select, options: ["The NosCast", "Greg's Awesome Party", "Prime Stories"] }
       - { name: date, label: Date, widget: datepicker }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
