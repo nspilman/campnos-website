@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,8 +12,10 @@ const theCollective = (props) => {
     <Layout>
     <SEO title="The Collective" />
     <h1>The CampNos Collective</h1>
-    {bios.map(persion => {
-    return <Bio bio={persion}/>})}
+    <div id="the-collective-bios">
+      {bios.map(persion => {
+      return <Bio bio={persion}/>})}
+    </div>
   </Layout>
   )
 }

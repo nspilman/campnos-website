@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          <img id="header-logo" src={logo}/>
+          <img id="header-logo" alt="Camp Nos Collective Logo" src={logo}/>
         </Link>
         <Link to="/"
           style={{

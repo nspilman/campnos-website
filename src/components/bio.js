@@ -11,8 +11,8 @@ const bio = (props) => {
                 fluid={frontmatter.image.childImageSharp.fluid}></Img>
             <h1>{frontmatter.name}</h1>
             <ul className="icons">
-                <li><a href={`https://twitter.com/${frontmatter.twitter}`} className="icon brands fa-twitter" target="_blank" noreferrer>Twitter</a></li>
-                <li><a href={`https://www.instagram.com/${frontmatter.instagram}`} className="icon brands fa-instagram" target="_blank" noreferrer>Instagram</a></li>
+                <li><a href={`https://twitter.com/${frontmatter.twitter}`} className="icon brands fa-twitter" target="_blank" rel="noreferrer">Twitter</a></li>
+                <li><a href={`https://www.instagram.com/${frontmatter.instagram}`} className="icon brands fa-instagram" target="_blank" rel="noreferrer">Instagram</a></li>
             </ul>
         </div>
     )

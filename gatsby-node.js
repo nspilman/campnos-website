@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const content = path.resolve(`src/templates/content.js`)
+  const content = path.resolve(`src/templates/show.js`)
 
   const result = await graphql(
     `

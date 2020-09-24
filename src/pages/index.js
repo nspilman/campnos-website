@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import logo from "../assets/images/logo.png"
-import ContentSection from '../components/contentSection'
+import ShowSection from '../components/showSection'
 
 const IndexPage = (props) => {
 	const allFiles = props.data.allFile.edges.map(edge => edge.node)
@@ -58,7 +58,7 @@ const IndexPage = (props) => {
 						const frontmatter = show.frontmatter;
 						const link = show.fields.slug;
 						const associatedEpisodes = episodes.filter(episode => episode.frontmatter.show === frontmatter.title)
-						return <ContentSection
+						return <ShowSection
 							key={frontmatter.title}
 							name={frontmatter.title}
 							logo={frontmatter.logo}
