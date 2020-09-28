@@ -1,21 +1,34 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Bio from "../components/bio"
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const Bios = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
 const theCollective = (props) => {
   const bios = props.data.allFile.edges.map(edge => edge.node.childMarkdownRemark)
   return (
     <Layout>
     <SEO title="The Collective" />
+    <Wrapper>      
     <h1>The CampNos Collective</h1>
-    <div id="the-collective-bios">
+    <Bios>
       {bios.map(persion => {
-      return <Bio bio={persion}/>})}
-    </div>
+        return <Bio bio={persion}/>})}
+    </Bios>
+    </Wrapper>
   </Layout>
   )
 }

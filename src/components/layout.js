@@ -5,10 +5,10 @@ import PropTypes from "prop-types"
 const Layout = ({ children }) => {
   return (
     <div>
-<Header/>
-        <main className='is-preload'>{children}</main>
+      <Header />
+      <main className='is-preload'>{children}</main>
     </div>
-    
+
   )
 }
 

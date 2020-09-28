@@ -1,45 +1,64 @@
 import React from "react"
 import Img from "gatsby-image"
+import styled from "styled-components"
 
-const contentSection = (props) => {
+const Wrapper = styled.div`
+flex-direction: row;
+display:flex;
+align-items: center;
+font-size: 1.5rem;
+border-top: 3px solid rgb(168,143,178);
+padding: 2rem 0;
+margin: 0 2rem;
+width:100%;
+@media (max-width: 768px) {
+    flex-direction: column;
+    margin-top:3rem;
+    padding-top:3rem;
+}
+`
+
+const ContentBoxWrapper = styled.div`
+    width:20rem;
+    margin:2rem;
+    color:white;
+`
+
+const LogoContainer = styled.div`
+width:15rem;
+display: flex;
+flex-direction: column;
+align-items:center;
+justify-content: center;
+color:rgb(168,143,178);
+`
+
+
+const showSection = (props) => {
     const logo = props.logo.childImageSharp.fluid;
     const link = props.link;
     return (
-        <div className="content-section">
+        <Wrapper>
             <a href={link}>
-                <div className="logo-container">
+                <LogoContainer>
                     <Img fluid={logo} />
                     <p>{props.name}</p>
-                </div>
+                </LogoContainer>
             </a>
             {props.episodes.map(episode => {
                 return (
-                    <div
-                        key={episode.title}
-                        className='content-box-wrapper'
-                        style={{
-                            margin: '2rem',
-                        }}
+                    <ContentBoxWrapper
+                        key={episode.frontmatter.title}
                     >
-
                         <div
-                            className='content-box'
-                            style={{
-                                width: '100%',
-                                color: 'white',
-                                height: '13rem',
-                            }}
-                        >
-                            <div
-                                dangerouslySetInnerHTML={{ __html: episode.html }}
-                            />
-                            <p>{episode.title}</p>
-                        </div>
-                    </div>
+                            dangerouslySetInnerHTML={{ __html: episode.html }}
+                        />
+                        <p>{episode.frontmatter.title}</p>
+                    </ContentBoxWrapper>
                 )
             })}
-        </div>
+        </Wrapper>
     )
 }
 
-export default contentSection
+export default showSection
