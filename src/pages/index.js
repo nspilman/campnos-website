@@ -18,28 +18,29 @@ const IndexPage = (props) => {
 			<SEO title="Home" />
 			<div id="wrapper">
 				<div id="left">
-				<section id="main" style={{ backgroundColor: 'rgb(168,143,178)', color: 'white' }}>
-					<header>
-						<span className="avatar">
-							<img src={logo} style={{ height: '300px' }} alt="" /></span>
-						<h1>Camp Nos Collective</h1>
-						<p>A collective of artist, beat makers, designers, comics, and creatives</p>
-					</header>
-					<div id="theCollective">
-					<Link to="/theCollective">
-					<button>
-						Who We Are
-					</button>
-					</Link>
-				</div>
-					<footer>
-						<ul className="icons">
-							<li><a href="https://twitter.com/CampNos" className="icon brands fa-twitter">Twitter</a></li>
-							<li><a href="https://www.instagram.com/campnosmedia/" className="icon brands fa-instagram">Instagram</a></li>
-							<li><a href="https://www.youtube.com/channel/UCUMITF9_Ry63dg7dC6v1TyA?sub_confirmation=1" className="icon brands fa-youtube">YouTube</a></li>
-						</ul>
-					</footer>
-				</section>
+					<section id="main" style={{ backgroundColor: 'rgb(168,143,178)', color: 'white' }}>
+						<header>
+							<span className="avatar">
+								<img src={logo} style={{ height: '300px' }} alt="Camp Nos Logo" />
+							</span>
+							<h1>Camp Nos Collective</h1>
+							<p>A collective of artist, beat makers, designers, comics, and creatives</p>
+						</header>
+						<div id="theCollective">
+							<Link to="/theCollective">
+								<button>
+									Who We Are
+								</button>
+							</Link>
+						</div>
+						<footer>
+							<ul className="icons">
+								<li><a href="https://twitter.com/CampNos" className="icon brands fa-twitter">Twitter</a></li>
+								<li><a href="https://www.instagram.com/campnosmedia/" className="icon brands fa-instagram">Instagram</a></li>
+								<li><a href="https://www.youtube.com/channel/UCUMITF9_Ry63dg7dC6v1TyA?sub_confirmation=1" className="icon brands fa-youtube">YouTube</a></li>
+							</ul>
+						</footer>
+					</section>
 				</div>
 				<section id="content"
 					style={{
@@ -53,12 +54,27 @@ const IndexPage = (props) => {
 						padding: '2rem 0',
 					}}
 				>
-					<h1
-						style={{ color: 'rgb(168,143,178)' }}>Shows</h1>
+					<h1 style={{ color: 'rgb(168,143,178)' }}>
+						Shows - Latest Episodes
+						</h1>
 					{shows.map(show => {
 						const frontmatter = show.frontmatter;
 						const link = show.fields.slug;
-						const associatedEpisodes = episodes.filter(episode => episode.frontmatter.show === frontmatter.title)
+						let associatedEpisodes = episodes.filter(
+							episode => episode.frontmatter.show === frontmatter.title
+						).sort((a, b) => {
+							var keyA = new Date(a.frontmatter.date),
+								keyB = new Date(b.frontmatter.date);
+							// Compare the 2 dates
+							if (keyA > keyB) return -1;
+							if (keyA < keyB) return 1;
+							return 0;
+						});
+
+						if (associatedEpisodes.length > 2) {
+							associatedEpisodes = associatedEpisodes.slice(0, 2)
+						}
+
 						return <ShowSection
 							key={frontmatter.title}
 							name={frontmatter.title}
@@ -100,6 +116,7 @@ export const pageQuery = graphql
                     show
                     description
 					title
+					date
 					logo {
 						childImageSharp {
 							fluid(maxWidth: 800) {
