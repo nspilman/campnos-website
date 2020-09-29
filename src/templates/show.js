@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from 'styled-components'
-
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const ShowOverview = styled.div`
   background-color: rgb(0,0,0,.5);
@@ -13,6 +13,7 @@ const ShowOverview = styled.div`
 const Episode = styled.div`
   padding:2rem;
   margin:1rem;
+  color:white;
   background-color: rgb(168,143,178);
 `
 
@@ -44,6 +45,7 @@ const content = (props) => {
   const logo = props.data.show.edges[0].node.frontmatter.logo.childImageSharp.fluid;
   return (
     <Layout>
+      <SEO title = {`${title} | Camp Nos Collective`}/>
       <ShowOverview>
         <ShowInfo>
           <Img className="show-page-logo" fluid={logo}></Img>
@@ -66,7 +68,6 @@ const content = (props) => {
                       dangerouslySetInnerHTML={{ __html: episode.html }}
                     />
                     <p>{episode.frontmatter.title}</p>
-                    <p>{episode.frontmatter.description}</p>
                   </Episode>
                 )
               }
@@ -94,6 +95,7 @@ export const pageQuery = graphql
               html
               frontmatter {
                 title
+                description
               }
             }
           }

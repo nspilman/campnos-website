@@ -14,10 +14,10 @@ const bio = (props) => {
     const { frontmatter } = props.bio
     return (
         <Wrapper>
-            <Img className='bio-image'
-                fluid={frontmatter.image.childImageSharp.fluid}></Img>
+            <Img className='bio-image' fluid={frontmatter.image.childImageSharp.fluid}/>
             <h1>{frontmatter.name}</h1>
-            <ul className="icons">
+            <h2>{frontmatter.title}</h2>
+            <ul className="icons" style={{display:'flex', justifyContent:'center'}}>
                 <li><a href={`https://twitter.com/${frontmatter.twitter}`} className="icon brands fa-twitter" target="_blank" rel="noreferrer">Twitter</a></li>
                 <li><a href={`https://www.instagram.com/${frontmatter.instagram}`} className="icon brands fa-instagram" target="_blank" rel="noreferrer">Instagram</a></li>
             </ul>
