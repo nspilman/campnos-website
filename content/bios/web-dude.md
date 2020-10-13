@@ -5,4 +5,4 @@ instagram: natespilman
 image: /assets/linkedinphoto.png
 title: Web Dude
 ---
-This is a CMS test
+Hi I'm Nate
