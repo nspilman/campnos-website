@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import { GatsbyImageFluidProps }from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,8 +18,38 @@ const Bios = styled.div`
   flex-direction: row;
 `
 
-const theCollective = (props) => {
-  const bios = props.data.allFile.edges.map(edge => edge.node.childMarkdownRemark)
+interface AllFile {
+  edges: Edge[]
+}
+
+interface Edge {
+  node: Node
+}
+
+interface Node {
+  childMarkdownRemark : {
+    frontmatter: BioFrontmatter
+  }
+}
+
+interface BioFrontmatter {
+  name: string,
+  title: string,
+  image: {
+      childImageSharp: GatsbyImageFluidProps
+  },
+  twitter:string,
+  instagram: string,
+}
+
+interface Props {
+  data : {
+    allFile: AllFile
+  }
+}
+
+const theCollective = ({ data } : Props) => {
+  const bios = data.allFile.edges.map(edge => edge.node.childMarkdownRemark)
   return (
     <Layout>
       <SEO title="The Collective" />
@@ -28,7 +59,7 @@ const theCollective = (props) => {
           {bios.map(person => {
             return <Bio
               key={person.frontmatter.name}
-              bio={person} />
+              bio={person.frontmatter} />
           })}
         </Bios>
       </Wrapper>

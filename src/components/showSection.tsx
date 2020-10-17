@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import Img , { GatsbyImageFluidProps }from "gatsby-image"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -44,9 +44,29 @@ const ShowTitle = styled.p`
     text-align: center;
 `
 
-const showSection = (props) => {
+interface EpisodeFrontmatter{
+    title: string,
+}
+
+interface Episode{
+    html: string,
+    frontmatter:EpisodeFrontmatter
+}
+
+interface Props {
+    logo: {
+        childImageSharp : GatsbyImageFluidProps
+    },
+    link : string,
+    name: string,
+    episodes: Episode[]
+}
+
+const moreEpisodesString : string = " More Episodes >>>";
+
+const showSection = (props: Props) => {
     const logo = props.logo.childImageSharp.fluid;
-    const link = props.link;
+    const link : string = props.link;
     return (
         <Wrapper>
             <a href={link}>
@@ -56,7 +76,7 @@ const showSection = (props) => {
                         {props.name}
                     </ShowTitle>
                     <MoreEpisodes>
-                        More Episodes >>>
+                       {moreEpisodesString}
                     </MoreEpisodes>
                 </LogoContainer>
             </a>

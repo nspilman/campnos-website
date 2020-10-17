@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const content = path.resolve(`src/templates/show.js`)
+  const content = path.resolve(`src/templates/show.tsx`)
 
   const result = await graphql(
     `
@@ -65,7 +65,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Create blog post pages.
     posts.forEach(post => {
-        const { sourceInstanceName } = post.node;
         const { title, description, logo } = post.node.childMarkdownRemark.frontmatter;
             console.log(post.node)
       createPage({
@@ -76,14 +75,6 @@ exports.createPages = async ({ graphql, actions }) => {
             title,
             description,
             logo
-          // Add optional context data to be inserted
-          // as props into the page component..
-          //
-          // The context data can also be used as
-          // arguments to the page GraphQL query.
-          //
-          // The page "path" is always available as a GraphQL
-          // argument.
         },
       })
     })

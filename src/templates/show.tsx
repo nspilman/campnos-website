@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import Img , { GatsbyImageFluidProps }from "gatsby-image"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -39,7 +39,62 @@ const EpisodeWrapper = styled.div`
   align-items: center;
 `
 
-const content = (props) => {
+
+interface EpisodeFrontmatter{
+  title: string,
+}
+
+interface allEpisodeMarkdownRemark{
+  edges: Edge[]
+}
+
+interface allShowMarkdownRemark{
+  edges: ShowEdge[]
+}
+
+interface Edge{
+  node: EpisodeNode
+}
+
+interface ShowEdge{
+  node: ShowNode
+}
+
+interface EpisodeNode{
+  id: number,
+  html: string,
+  frontmatter: EpisodeFrontmatter
+}
+
+interface ShowFrontMatter{
+  logo: {
+    childImageSharp : GatsbyImageFluidProps
+},
+link : string,
+name: string,
+}
+
+interface ShowNode{
+  id: number,
+  html: string,
+  frontmatter: ShowFrontMatter
+}
+
+interface PageContext{
+  title: string,
+  description: string
+}
+
+interface Props {
+  pageContext : PageContext
+  data: {
+    episodes: allEpisodeMarkdownRemark,
+    show: allShowMarkdownRemark,
+  }
+
+}
+
+const content = (props : Props) => {
   const { title, description } = props.pageContext;
   const episodes = props.data.episodes.edges.map(edge => edge.node);
   const logo = props.data.show.edges[0].node.frontmatter.logo.childImageSharp.fluid;

@@ -86,7 +86,6 @@ const IndexPage = (props) => {
 
 
 				</section>
-				{/* <!-- Footer --> */}
 			</div>
 			<footer id="footer">
 				<ul className="copyright">

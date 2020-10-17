@@ -1,8 +1,12 @@
 import Header from "./header"
-import React from "react"
+import React, { ReactNode } from "react"
 import PropTypes from "prop-types"
 
-const Layout = ({ children }) => {
+interface Props {
+  children : ReactNode
+}
+
+const Layout = ({ children } : Props ) => {
   return (
     <div>
       <Header />

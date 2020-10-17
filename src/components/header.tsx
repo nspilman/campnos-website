@@ -15,7 +15,11 @@ const HeaderLogo = styled.img`
   margin:1rem;
 `
 
-const Header = ({ siteTitle }) => (
+interface Props {
+  siteTitle : string
+}
+
+const Header = ({ siteTitle } : Props) => (
   <Wrapper id="site-header">
     <Link
       to="/"
