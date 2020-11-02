@@ -1,10 +1,8 @@
 ---
-title: 'Noscast #009 - "Issa Box"'
+title: 'Noscast #010 - "Defund The Green Lantern Corp"'
 show: The NosCast
-date: 2020-10-12T07:00:00.000Z
-youtube: oA5Bs61Yrs4
-description: The Camp Nos Crew is back at it with their thoughts on the greatest
-  horror franchises of all time, as well as a rundown of the latest news to come
-  out of Marvel, DC and the rest of the entertainment realm.
+date: 2020-10-19T07:00:00.000Z
+youtube: T1pNEn-pzUY
+description: 'Noscast #010 - "Defund The Green Lantern Corp"'
 ---
-The Camp Nos Crew is back at it with their thoughts on the greatest horror franchises of all time, as well as a rundown of the latest news to come out of Marvel, DC and the rest of the entertainment realm.
+Noscast #010 - "Defund The Green Lantern Corp"
