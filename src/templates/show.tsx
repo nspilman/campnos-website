@@ -122,9 +122,6 @@ const content = (props : Props) => {
                     key={episode.frontmatter.title}
                   >
                     <Youtube videoId={episode.frontmatter.youtube}/>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: episode.html }}
-                    />
                     <p>{episode.frontmatter.title}</p>
                   </Episode>
                 )

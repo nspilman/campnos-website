@@ -66,7 +66,6 @@ exports.createPages = async ({ graphql, actions }) => {
     // Create blog post pages.
     posts.forEach(post => {
         const { title, description, logo } = post.node.childMarkdownRemark.frontmatter;
-            console.log(post.node)
       createPage({
         // Path for this page — required
         path: post.node.childMarkdownRemark.fields.slug,
