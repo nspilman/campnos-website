@@ -6,4 +6,4 @@ youtube: p-h6JDN5HPg
 description: On this weeks episode Camp Nos discuss simpin in September , the
   upcoming fresh prince doc , Bill & Ted , Chadwick Boseman , & more.
 ---
-https://youtu.be/p-h6JDN5HPg
+On this weeks episode Camp Nos discuss simpin in September , the upcoming fresh prince doc , Bill & Ted , Chadwick Boseman , & more.
