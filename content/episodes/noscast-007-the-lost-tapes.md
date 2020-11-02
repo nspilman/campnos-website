@@ -1,11 +1,10 @@
 ---
-title: "Noscast #008: Welcome to Horror Land"
+title: 'Noscast #009 - "Issa Box"'
 show: The NosCast
-date: 2020-10-05T07:00:00.000Z
-youtube: R2ZIaxn5rr8
-description: The Camp Nos boys are back at it with their thoughts on Haunted
-  houses and other horror spots in the Tristate area, Disneyland/DisneyWorld
-  experiences, and favorite theme park rides. As well as a rundown of the latest
-  news to come out of Marvel, DC and the rest of the entertainment realm.
+date: 2020-10-12T07:00:00.000Z
+youtube: oA5Bs61Yrs4
+description: The Camp Nos Crew is back at it with their thoughts on the greatest
+  horror franchises of all time, as well as a rundown of the latest news to come
+  out of Marvel, DC and the rest of the entertainment realm.
 ---
-The Camp Nos boys are back at it with their thoughts on Haunted houses and other horror spots in the Tristate area, Disneyland/DisneyWorld experiences, and favorite theme park rides. As well as a rundown of the latest news to come out of Marvel, DC and the rest of the entertainment realm.
+The Camp Nos Crew is back at it with their thoughts on the greatest horror franchises of all time, as well as a rundown of the latest news to come out of Marvel, DC and the rest of the entertainment realm.
