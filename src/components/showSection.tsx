@@ -1,6 +1,7 @@
 import React from "react"
 import Img , { GatsbyImageFluidProps }from "gatsby-image"
 import styled from "styled-components"
+import Youtube from "../components/youtube"
 
 const Wrapper = styled.div`
 flex-direction: row;
@@ -46,6 +47,7 @@ const ShowTitle = styled.p`
 
 interface EpisodeFrontmatter{
     title: string,
+    youtube: string,
 }
 
 interface Episode{
@@ -85,9 +87,10 @@ const showSection = (props: Props) => {
                     <ContentBoxWrapper
                         key={episode.frontmatter.title}
                     >
-                        <div className="episode-clip"
-                            dangerouslySetInnerHTML={{ __html: episode.html }}
-                        />
+                        <div className = "episode-clip" >
+                            <Youtube videoId = {episode.frontmatter.youtube}/>
+                        </div>
+   
                         <p>{episode.frontmatter.title}</p>
                     </ContentBoxWrapper>
                 )

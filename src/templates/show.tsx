@@ -4,6 +4,7 @@ import Img , { GatsbyImageFluidProps }from "gatsby-image"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Youtube from "../components/youtube"
 
 const ShowOverview = styled.div`
   background-color: rgb(0,0,0,.5);
@@ -42,6 +43,7 @@ const EpisodeWrapper = styled.div`
 
 interface EpisodeFrontmatter{
   title: string,
+  youtube: string,
 }
 
 interface allEpisodeMarkdownRemark{
@@ -82,7 +84,7 @@ interface ShowNode{
 
 interface PageContext{
   title: string,
-  description: string
+  description: string,
 }
 
 interface Props {
@@ -119,6 +121,7 @@ const content = (props : Props) => {
                   <Episode
                     key={episode.frontmatter.title}
                   >
+                    <Youtube videoId={episode.frontmatter.youtube}/>
                     <div
                       dangerouslySetInnerHTML={{ __html: episode.html }}
                     />
@@ -150,6 +153,7 @@ export const pageQuery = graphql
               html
               frontmatter {
                 title
+                youtube
                 description
               }
             }

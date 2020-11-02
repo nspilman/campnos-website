@@ -115,6 +115,7 @@ export const pageQuery = graphql
                     show
                     description
 					title
+					youtube
 					date
 					logo {
 						childImageSharp {
