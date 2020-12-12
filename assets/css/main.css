@@ -12,7 +12,7 @@ a:link {
 
 #top{
     flex: 1.5;
-    background-image:url(campNosBg.png);
+    background-image:url(../images/campNosBg.png);
     background-size: 200%;
     display:flex;
     align-items: center;
@@ -39,7 +39,7 @@ a:link {
 }
 
 #camp-nos-logo{
-    width:500px;
+    width:400px;
 }
 
 #site-title{
@@ -55,14 +55,61 @@ a:link {
 }
 
 .fab:hover{
-    color:rgb(222,0,247)
+    color:rgb(222,0,247);
 }
 
-@media only screen and (max-width: 600px) {
+.bio{
+    background-color:rgb(25,25,25);
+    color:white;
+    padding:2rem;
+    display:flex;
+    flex-direction: row;
+    margin:1rem;
+    align-items: center;
+
+}
+
+#bios-page{
+    background-image:url(../images/campNosBg.png);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bio-image{
+    width:250px;
+    height:250px;
+    padding:1rem;
+}
+
+.bio-body{
+    padding:3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.bio-text{
+    font-weight: 200;
+}
+
+.bio-name{
+    color:rgb(0,244,161);
+}
+
+@media only screen and (max-width: 800px) {
     #camp-nos-logo{
         width:300px;
     }
     .fab{
         font-size:32px;
+    }
+    .bio{
+        flex-direction: column;
+    }
+
+    .bio-body{
+        padding:1rem;
+        display: flex;
+        flex-direction: column;
     }
   }
