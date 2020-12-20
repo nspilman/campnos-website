@@ -1,6 +1,6 @@
 <template>
   <div id="bios-page">
-    <img id="camp-nos-logo" :src="campNosLogo" />
+   <a href="/"> <img id="camp-nos-logo" :src="campNosLogo" /></a>
     <section id="bios">
       <Bio v-for="bio in bios" :key="bio.name" :bio="bio" />
     </section>

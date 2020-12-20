@@ -5,6 +5,7 @@
     <section id="bottom">
       <div id="title-and-social">
         <h1 id="site-title">@CAMPNOS</h1>
+        <a href="collective"><h2 id="collective-link"> See the Collective </h2></a>
         <div id="social-media-fonts">
           <a href="https://www.facebook.com/campnos" target="_blank" noreferrer>
             <i class="fab fa-facebook"></i>
@@ -67,4 +68,23 @@ export default {
     justify-content: center;
     height:60vh;
 }
+
+#site-title{
+    font-size:2.5rem;
+    font-weight: 100;
+}
+
+.fab,
+#collective-link{
+    color:rgb(0,244,161);
+    cursor: pointer;
+    transition: 200ms;
+    margin:0;
+}
+
+.fab:hover,
+#collective-link:hover{
+    color:rgb(222,0,247);
+}
+
 </style>
