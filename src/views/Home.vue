@@ -5,7 +5,7 @@
     <section id="bottom">
       <div id="title-and-social">
         <h1 id="site-title">@CAMPNOS</h1>
-        <a href="collective"><h2 id="collective-link"> See the Collective </h2></a>
+        <a href="collective"><h3 id="collective-link"> See the Collective </h3></a>
         <div id="social-media-fonts">
           <a href="https://www.facebook.com/campnos" target="_blank" noreferrer>
             <i class="fab fa-facebook"></i>
@@ -46,6 +46,12 @@ export default {
 
 <style scoped>
 
+#camp-nos-logo{
+  max-height:40vh;
+  width:auto;
+  max-width: 70vw;
+}
+
 #bottom{
     flex: 1;
     background-color: rgb(25,25,25);
@@ -56,7 +62,7 @@ export default {
     color:white;
     flex-direction: column;
     width:100vw;
-    height:40vh;
+    height:50vh;
 }
 
 #top{
@@ -66,12 +72,22 @@ export default {
     display:flex;
     align-items: center;
     justify-content: center;
-    height:60vh;
+    height:50vh;
 }
 
 #site-title{
     font-size:2.5rem;
     font-weight: 100;
+    margin:0;
+}
+
+#title-and-social{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding:3rem;
+    height:100%;
 }
 
 .fab,

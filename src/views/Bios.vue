@@ -31,3 +31,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#bios-page{
+  padding:2rem 0;
+}
+</style>

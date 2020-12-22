@@ -10,26 +10,8 @@ a:link {
     text-decoration: none;
   }
 
-#title-and-social{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 6rem;
-}
-
 #camp-nos-logo{
     width:400px;
-}
-
-#site-title{
-    font-size:2.5rem;
-    font-weight: 100;
-}
-
-.fab{
-    color:rgb(0,244,161);
-    padding:1rem;
-    cursor: pointer;
 }
 
 #social-media-fonts .fab{
@@ -41,10 +23,6 @@ a:link {
     padding:2rem 0;
 }
 
-.fab:hover{
-    color:rgb(222,0,247);
-}
-
 #bios-page{
     background-image:url(../images/campNosBg.png);
     background-attachment: fixed;
@@ -52,6 +30,19 @@ a:link {
     display:flex;
     flex-direction: column;
     align-items: center;
+}
+
+.fab,
+#collective-link{
+    color:rgb(0,244,161);
+    cursor: pointer;
+    transition: 200ms;
+    margin:0;
+}
+
+.fab:hover,
+#collective-link:hover{
+    color:rgb(222,0,247);
 }
 
 @media only screen and (max-width: 800px) {

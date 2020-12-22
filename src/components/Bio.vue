@@ -85,6 +85,9 @@ export default {
 .bio-text{
     font-weight: 200;
 }
+.bio{
+  flex-direction: column;
+}
 }
 
 </style>
